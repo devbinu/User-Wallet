@@ -1,28 +1,30 @@
 package com.userregistration.userregistration.models;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
-public class User{
+public class User {
 
 	@Id
+	@GeneratedValue
 	private long id;
+	
 	private String username;
 	private String password;
 	private String name;
 	private String emailId;
-	private int contactNumber;
-	private long walletId;
-	private int walletAmount;
-	
+	private long contactNumber;
+	private double walletAmount;
+
 	public User() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public User(long id, String username, String password, String name, String emailId, int contactNumber,
-			long walletId, int walletAmount) {
+	public User(long id, String username, String password, String name, String emailId, long contactNumber,
+			double walletAmount) {
 		super();
 		this.id = id;
 		this.username = username;
@@ -30,7 +32,6 @@ public class User{
 		this.name = name;
 		this.emailId = emailId;
 		this.contactNumber = contactNumber;
-		this.walletId = walletId;
 		this.walletAmount = walletAmount;
 	}
 
@@ -74,36 +75,26 @@ public class User{
 		this.emailId = emailId;
 	}
 
-	public int getContactNumber() {
+	public long getContactNumber() {
 		return contactNumber;
 	}
 
-	public void setContactNumber(int contactNumber) {
+	public void setContactNumber(long contactNumber) {
 		this.contactNumber = contactNumber;
 	}
 
-	public long getWalletId() {
-		return walletId;
-	}
-
-	public void setWalletId(long walletId) {
-		this.walletId = walletId;
-	}
-
-	public int getWalletAmount() {
+	public double getWalletAmount() {
 		return walletAmount;
 	}
 
-	public void setWalletAmount(int walletAmount) {
+	public void setWalletAmount(double walletAmount) {
 		this.walletAmount = walletAmount;
 	}
 
 	@Override
 	public String toString() {
 		return "User [id=" + id + ", username=" + username + ", password=" + password + ", name=" + name + ", emailId="
-				+ emailId + ", contactNumber=" + contactNumber + ", walletId=" + walletId + ", walletAmount="
-				+ walletAmount + "]";
+				+ emailId + ", contactNumber=" + contactNumber + ", walletAmount=" + walletAmount + "]";
 	}
-	
-	
+
 }
