@@ -17,8 +17,10 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public User createUser(User user) {
 		
-		userDao.save(user);
-		return user;
+		// Set Initial Wallet Amount = 0
+		user.setWalletAmount(0);
+		
+		return userDao.save(user);
 	}
 
 	@Override
